@@ -1,26 +1,24 @@
 import java.util.Arrays;
 import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        Scanner scan=new Scanner(System.in);
+        Scanner scan = new Scanner(System.in);
 
-        int N=scan.nextInt();
-        double[] score=new double[N];
-        for(int i=0;i<N;i++){
-            score[i]=scan.nextDouble();
+        int N = scan.nextInt();
+        double[] score = new double[N];
+
+        for (int i = 0; i < N; i++) {
+            score[i] = scan.nextInt();
         }
         Arrays.sort(score);
-        double max=score[N-1];
-
+        double max = score[N-1];
         double sum=0;
-        double answer=0;
-        for(int i=0;i<N;i++){
-            score[i]=(score[i]/max)*100;
-            sum+=score[i];
-            if(i==N-1){
-                answer=sum/N;
-            }
+        for (int j = 0; j < N; j++) {
+            score[j] = (score[j]/max) * 100;
+            sum+=score[j];
         }
-        System.out.println(answer);
+        double average=sum/(double)N;
+        System.out.println(average);
     }
 }
