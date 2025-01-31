@@ -23,10 +23,7 @@ def bfs(x, graph, visited):
         answer[child] = parent
         visited[child] = 1
         q.append(child)
-
-for i in range(1,n+1):
-  if not visited[i]:
-    bfs(i, graph, visited)
+bfs(1, graph, visited)
 
 for i in range(1,n):
   print(answer[i+1])
