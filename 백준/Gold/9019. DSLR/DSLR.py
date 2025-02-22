@@ -16,8 +16,11 @@ def bfs(n,m):
     if now == m:
       return oper
     
-    fNow = '{0:04d}'.format(now%(10**4))
-    res = [(now*2)%(10**4), now-1 if now != 0 else 9999, int(fNow[1:]+fNow[0]), int(fNow[3:]+fNow[:3])]
+    d = (now*2)%(10**4)
+    s = now-1 if now != 0 else 9999
+    l = now%1000*10 + now//1000
+    r = now%10*1000 + now//10
+    res = [d,s,l,r]
 
     for i in range(4):
       if not visited.get(res[i]):
