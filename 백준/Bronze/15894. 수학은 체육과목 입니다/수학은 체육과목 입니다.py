@@ -2,4 +2,4 @@ import sys
 input = sys.stdin.readline
 
 n = int(input())
-print(n+n+2*n)
+print(4*n)
